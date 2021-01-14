@@ -14,5 +14,10 @@ class Test01(unittest.TestCase):
         self.assertEqual(self.btc.symbol, 'BTC')
         self.assertEqual(self.eth.symbol, 'ETH')
 
+    def test_CryptoCurrencies_has_a_price(self):
+        self.assertIsNotNone(self.btc.price)
+        self.assertIsNotNone(self.eth.price)
+
+
 if __name__ == '__main__':
     unittest.main()
