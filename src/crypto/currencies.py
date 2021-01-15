@@ -9,3 +9,6 @@ class CryptoCurrency:
         self.symbol = symbol
         self.price = price
         self.last_updated = date.today()
+
+    def update_price(self, price):
+        self.price = price

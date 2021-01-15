@@ -26,5 +26,9 @@ class TestCryptoCurrencies(unittest.TestCase):
         self.assertEqual(self.btc.last_updated, date.today())
         self.assertEqual(self.eth.last_updated, date.today())
 
+    def test_price_can_be_updated(self):
+        self.btc.update_price(20)
+        self.assertEqual(self.btc.price, 20)
+
 if __name__ == '__main__':
     unittest.main()
