@@ -7,5 +7,5 @@ class PriceAlert:
         self.condition = condition
 
     def is_triggered(self):
-        return True
+        return self.condition(self.currency.price)
 
