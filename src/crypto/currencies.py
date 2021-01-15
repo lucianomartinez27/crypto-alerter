@@ -8,8 +8,8 @@ class CryptoCurrency:
         # this is sometimes called ticker (like 'BTC', 'ETH', 'USD', etc.)
         self.symbol = symbol
         self.price = price
-        self.last_updated = date.today()
+        self.last_update = date.today()
 
     def update_price(self, price):
         self.price = price
-        self.last_updated = date.today()
+        self.last_update = date.today()
