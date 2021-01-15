@@ -12,3 +12,4 @@ class CryptoCurrency:
 
     def update_price(self, price):
         self.price = price
+        self.last_updated = date.today()
