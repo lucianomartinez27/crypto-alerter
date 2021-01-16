@@ -13,3 +13,5 @@ class Test03(unittest.TestCase):
     def test_Exchange_contains_currencies(self):
         self.assertSequenceEqual(self.exchange.currencies, [CryptoCurrency('BTC', 1), CryptoCurrency('ETH', 1)])
 
+    def test_currency_can_be_accessed_by_its_symbol(self):
+        self.assertEqual(self.exchange.at('BTC'), CryptoCurrency('BTC', 1))

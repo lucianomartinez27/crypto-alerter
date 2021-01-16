@@ -5,7 +5,6 @@ from datetime import date
 
 class CryptoCurrency:
     def __init__(self, symbol, price):
-        # this is sometimes called ticker (like 'BTC', 'ETH', 'USD', etc.)
         self.symbol = symbol
         self.price = price
         self.last_update = date.today()
