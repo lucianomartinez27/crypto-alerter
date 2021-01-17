@@ -12,3 +12,7 @@ class Exchange:
 
     def at(self, symbol):
         return self.ticker[symbol]
+
+    def update(self, updates):
+        for symbol, content in zip(updates.keys(), updates.values()):
+            self.at(symbol).update_price(content['price'])

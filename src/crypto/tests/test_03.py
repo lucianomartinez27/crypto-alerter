@@ -15,3 +15,9 @@ class Test03(unittest.TestCase):
 
     def test_currency_can_be_accessed_by_its_symbol(self):
         self.assertEqual(self.exchange.at('BTC'), CryptoCurrency('BTC', 1))
+
+    def test_exchange_currencies_can_be_updated(self):
+        updates = {'ETH': {'price': 125}, 'BTC': {'price': 225}}
+        self.exchange.update(updates)
+        self.assertEqual(self.exchange.at('ETH'), CryptoCurrency('ETH', 125))
+        self.assertEqual(self.exchange.at('BTC'), CryptoCurrency('BTC', 225))
