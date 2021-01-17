@@ -14,3 +14,6 @@ class Listener:
     def check_alerts(self):
         for event in self.events:
             event.execute_action()
+
+    def __len__(self):
+        return len(self.events)
