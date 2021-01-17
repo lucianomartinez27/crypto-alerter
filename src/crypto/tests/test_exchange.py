@@ -6,7 +6,7 @@ from src.crypto.currencies import CryptoCurrency
 from src.crypto.exchange import Exchange
 
 
-class Test03(unittest.TestCase):
+class TestExchange(unittest.TestCase):
     def setUp(self):
         self.exchange = Exchange()
 
@@ -21,3 +21,4 @@ class Test03(unittest.TestCase):
         self.exchange.update(updates)
         self.assertEqual(self.exchange.at('ETH'), CryptoCurrency('ETH', 125))
         self.assertEqual(self.exchange.at('BTC'), CryptoCurrency('BTC', 225))
+
