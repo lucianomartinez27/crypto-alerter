@@ -6,6 +6,6 @@ class PriceAlert:
         self.currency = currency
         self.condition = condition
 
-    def is_triggered(self):
+    def matches(self):
         return self.condition(self.currency.price)
 
