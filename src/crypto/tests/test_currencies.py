@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+
 import unittest
 from datetime import date
-from ..currencies import CryptoCurrency
+from src.crypto.currencies import CryptoCurrency
 
 
 class TestCryptoCurrencies(unittest.TestCase):
@@ -35,5 +36,4 @@ class TestCryptoCurrencies(unittest.TestCase):
         self.assertEqual(self.btc.last_update, date.today())
 
 
-if __name__ == '__main__':
-    unittest.main()
+

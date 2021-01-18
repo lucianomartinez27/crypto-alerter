@@ -17,7 +17,6 @@ class TestAlertSystem(unittest.TestCase):
         self.alert_system.add_alert('ETH', 20, action)
         self.alert_system.add_alert('ETH', 100, action)
         self.assertEqual(len(self.alert_system.listener), 3)
-        self.assertEqual(self.alert_system.listener.events[0].action, action)
 
     def test_when_the_exchange_is_updated_the_alerts_are_checked(self):
         updates = {'BTC': {'price': 2000}, 'ETH': {'price': 200}}
