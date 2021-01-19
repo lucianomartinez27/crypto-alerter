@@ -13,7 +13,9 @@ class Listener:
 
     def check_alerts(self):
         for event in self.events:
-            event.execute_action()
+            if event.price_alert.matches():
+                event.execute_action()
+                self.events.remove(event)
 
     def __len__(self):
         return len(self.events)

@@ -7,5 +7,4 @@ class Event:
         self.action = action
 
     def execute_action(self):
-        if self.price_alert.matches():
-            self.action()
+        self.action()

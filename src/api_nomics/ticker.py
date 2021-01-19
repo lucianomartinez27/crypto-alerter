@@ -15,4 +15,4 @@ class Ticker:
             for currency in self.ticker.get_currencies(currencies):
                 updates[currency['id']] = {'price': float(currency['price'])}
             return updates
-        return {}
+        return updates

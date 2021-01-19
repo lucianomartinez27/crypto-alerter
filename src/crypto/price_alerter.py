@@ -9,3 +9,6 @@ class PriceAlert:
     def matches(self):
         return self.condition(self.currency.price)
 
+    def __str__(self):
+        return 'PriceAlert({}, {})'.format(self.currency.symbol, self.currency.price)
+

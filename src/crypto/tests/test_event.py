@@ -15,9 +15,3 @@ class TestEvent(unittest.TestCase):
         event = Event(PriceAlert(CryptoCurrency('ETH', 10), lambda price: price >= 10), action)
         event.execute_action()
         self.assertTrue(action.called)
-
-    def test_an_event_does_not_execute_an_action_if_the_alert_condition_is_false(self):
-        action = Mock()
-        event = Event(PriceAlert(CryptoCurrency('ETH', 10), lambda price: price >= 20), action)
-        event.execute_action()
-        self.assertFalse(action.called)
