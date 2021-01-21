@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from src.crypto.currencies import CryptoCurrency
+
 from src.crypto.exchange import Exchange
 from src.crypto.listener import Listener
 from src.crypto.price_alerter import PriceAlert

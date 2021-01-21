@@ -1,14 +1,16 @@
-import nomics
 import time
-from src.crypto.alert_system import CryptoPriceAlertSystem
-nomic = nomics.Nomics('***REMOVED***')
-alert_system = CryptoPriceAlertSystem()
-alert_system.add_alert('BTC', 30_000, lambda: print('Paso los 30k'))
+from config import nomics_token, telegram_token
+from src.api_nomics.ticker import Ticker
+from src.bot_telegram.bot_alerter import BotAlerter
+from src.bot_telegram.bot_telegram import BotTelegram
+ticker = Ticker(nomics_token)
+bot = BotTelegram(telegram_token)
+alerter = BotAlerter()
+bot.answer_message_with(alerter.add_alert)
 
 while True:
-    updates = {'BTC':{ 'price': float(nomic.Currencies.get_currencies(ids='BTC, ETH', interval='1h')[0]['price'])}}
-    print(updates)
-
-    alert_system.update_exchange(updates)
-    time.sleep(1)
+    alerter.alert_system.update_exchange(ticker.get_prices('BTC, ETH'))
+    for currency in alerter.alert_system.exchange.currencies:
+        print(currency.symbol, currency.price)
+    time.sleep(30)
 
